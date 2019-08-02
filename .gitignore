@@ -4,3 +4,4 @@ doc/html/*
 *_cert_id_file
 *_cert_pem_file
 *_private_key_pem_file
+demos/espressif/*
