@@ -4152,10 +4152,20 @@ TCB_t *pxTCB;
 			interrupt.  Only assert if the critical nesting count is 1 to
 			protect against recursive calls if the assert function also uses a
 			critical section. */
+
+			/* DISABLED in the esp32 port - because of SMP, For ESP32
+			FreeRTOS, vTaskEnterCritical implements both
+			portENTER_CRITICAL and portENTER_CRITICAL_ISR. vTaskEnterCritical
+			has to be used in way more places than before, and some are called
+			both from ISR as well as non-ISR code, thus we re-organized
+			vTaskEnterCritical to also work in ISRs. */
+			
+			#if 0
 			if( pxCurrentTCB->uxCriticalNesting == 1 )
 			{
 				portASSERT_IF_IN_ISR();
 			}
+			#endif
 		}
 		else
 		{
