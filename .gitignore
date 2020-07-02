@@ -16,3 +16,5 @@ tools/aws_config_quick_start/*_cert_id_file
 tools/aws_config_quick_start/*_cert_pem_file
 tools/aws_config_quick_start/*_private_key_pem_file
 tools/aws_config_quick_start/*.pyc
+.vscode/
+tools/aws_config_quick_start/configure.json
